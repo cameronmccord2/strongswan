@@ -44,16 +44,10 @@
 #endif /* TRUE */
 
 /**
- * define some missing fixed width int types on OpenSolaris.
- * TODO: since the uintXX_t types are defined by the C99 standard we should
- * probably use those anyway
+ * C99 integer types
  */
-#if defined __sun || defined WIN32
-#include <stdint.h>
-typedef uint8_t  uint8_t;
-typedef uint16_t uint16_t;
-typedef uint32_t uint32_t;
-typedef uint64_t uint64_t;
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
 #endif
 
 #ifdef HAVE_INT128
